@@ -1,5 +1,5 @@
 require("isuck.set")
-require("isuck.remap")
+require("isuck.mappings")
 require("plugins")
 
 -- TODO: why config is not working inside nvim-lspconfig?
