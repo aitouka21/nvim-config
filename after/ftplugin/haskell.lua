@@ -1,5 +1,10 @@
 vim.g.haskell_tools = {
   hls = {
+    settings = {
+      haskell = {
+        formattingProvider = "stylish-haskell",
+      },
+    },
     on_attach = require("helpers.lsp").on_attach,
   },
 }
