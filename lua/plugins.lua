@@ -196,13 +196,6 @@ require("lazy").setup({
     },
   },
   {
-    "rmagatti/auto-session",
-    opts = {
-      log_level = "error",
-      auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-    },
-  },
-  {
     "ThePrimeagen/harpoon",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function() require("config.harpoon") end,
