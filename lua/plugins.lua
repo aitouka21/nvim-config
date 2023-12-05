@@ -171,7 +171,10 @@ require("lazy").setup({
     "jose-elias-alvarez/null-ls.nvim",
     config = function() require("config.null_ls") end,
   },
-  "FabijanZulj/blame.nvim",
+  {
+    "FabijanZulj/blame.nvim",
+    config = function() require("config.blame") end,
+  },
   {
     "stevearc/oil.nvim",
     config = function() require("config.oil") end,
