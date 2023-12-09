@@ -39,12 +39,8 @@ require("lazy").setup({
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup {
-        -- Configuration here, or leave empty to use defaults
-      }
-    end,
+    config = function() require("nvim-surround").setup {} end,
+    keys = { "cs", "ds", "ys" },
   },
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -55,13 +51,10 @@ require("lazy").setup({
         },
       }
     end,
+    event = { "BufReadPre", "BufNewFile" },
   },
-  -- Detect tabstop and shiftwidth automatically
-  "tpope/vim-sleuth",
   {
-    -- Set lualine as statusline
     "nvim-lualine/lualine.nvim",
-    -- See `:help lualine.txt`
     opts = {
       options = {
         icons_enabled = false,
@@ -70,11 +63,13 @@ require("lazy").setup({
         section_separators = "",
       },
     },
+    event = { "BufReadPre", "BufNewFile" },
   },
   {
     -- Useful plugin to show you pending keybinds.
     "folke/which-key.nvim",
     opts = {},
+    event = "VeryLazy",
   },
   {
     "folke/todo-comments.nvim",
@@ -88,6 +83,7 @@ require("lazy").setup({
   {
     "lewis6991/gitsigns.nvim",
     config = function() require("config.gitsigns") end,
+    event = { "BufReadPre", "BufNewFile" },
   },
   {
     -- LSP Configuration & Plugins
@@ -121,6 +117,7 @@ require("lazy").setup({
       "rafamadriz/friendly-snippets",
     },
     config = function() require("config.cmp") end,
+    event = { "InsertEnter" },
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -138,6 +135,7 @@ require("lazy").setup({
         cond = function() return vim.fn.executable("make") == 1 end,
       },
     },
+    event = "VeryLazy",
     config = function() require("config.telescope") end,
   },
   {
@@ -148,6 +146,7 @@ require("lazy").setup({
     },
     build = ":TSUpdate",
     config = function() require("config.nvim-treesitter") end,
+    event = { "BufReadPre", "BufNewFile" },
   },
   { "nvim-tree/nvim-web-devicons", lazy = true },
   {
@@ -166,14 +165,17 @@ require("lazy").setup({
   {
     "github/copilot.vim",
     config = function() require("config.copilot") end,
+    event = { "BufReadPre", "BufNewFile" },
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
     config = function() require("config.null_ls") end,
+    event = { "BufReadPre", "BufNewFile" },
   },
   {
     "FabijanZulj/blame.nvim",
     config = function() require("config.blame") end,
+    event = { "BufReadPre", "BufNewFile" },
   },
   {
     "stevearc/oil.nvim",
@@ -181,32 +183,19 @@ require("lazy").setup({
   },
   {
     "folke/zen-mode.nvim",
-  },
-  {
-    "folke/twilight.nvim",
-    opts = {
-      dimming = {
-        alpha = 0.5,
-      },
-      context = 15,
-      treesitter = true,
-      expand = {
-        "function",
-        "method",
-        "table",
-        "if_statement",
-      },
-    },
+    cmd = "ZenMode",
   },
   {
     "ThePrimeagen/harpoon",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function() require("config.harpoon") end,
+    event = "VeryLazy",
   },
   {
     "norcalli/nvim-colorizer.lua",
     name = "colorizer",
     config = function() require("colorizer").setup() end,
+    event = { "BufReadPre", "BufNewFile" },
   },
   {
     "pmizio/typescript-tools.nvim",
@@ -214,10 +203,12 @@ require("lazy").setup({
     opts = {
       on_attach = require("helpers.lsp").on_attach,
     },
+    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
   },
   {
     "dmmulroy/tsc.nvim",
     opts = {},
+    cmd = "TSC",
   },
   {
     "mrcjkb/haskell-tools.nvim",

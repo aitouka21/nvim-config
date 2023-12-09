@@ -17,7 +17,10 @@ local servers = {
       format = { enable = false },
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
-      diagnostics = { globals = { "vim", "ngx" } },
+      diagnostics = {
+        disable = { "missing-fields" },
+        globals = { "vim", "ngx" },
+      },
     },
   },
 }
