@@ -28,7 +28,7 @@ require("lazy").setup({
           which_key = true,
         },
       }
-      vim.cmd.colorscheme("catppuccin")
+      -- vim.cmd.colorscheme("catppuccin")
     end,
   },
   {
@@ -46,9 +46,9 @@ require("lazy").setup({
     "lukas-reineke/indent-blankline.nvim",
     config = function()
       require("ibl").setup {
-        indent = {
-          char = "┊",
-        },
+        -- indent = {
+        --   char = "┊",
+        -- },
       }
     end,
     event = { "BufReadPre", "BufNewFile" },
