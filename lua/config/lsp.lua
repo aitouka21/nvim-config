@@ -11,7 +11,11 @@ local servers = {
   rust_analyzer = {},
   sqlls = {},
   gopls = {},
-  eslint = {},
+  -- eslint = {
+  --   settings = {
+  --     format = false,
+  --   },
+  -- },
   lua_ls = {
     Lua = {
       format = { enable = false },

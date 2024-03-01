@@ -28,7 +28,7 @@ require("lazy").setup({
           which_key = true,
         },
       }
-      vim.cmd.colorscheme("catppuccin")
+      vim.cmd.colorscheme("default")
     end,
   },
   {
@@ -46,9 +46,9 @@ require("lazy").setup({
     "lukas-reineke/indent-blankline.nvim",
     config = function()
       require("ibl").setup {
-        -- indent = {
-        --   char = "┊",
-        -- },
+        indent = {
+          char = "┊",
+        },
       }
     end,
     event = { "BufReadPre", "BufNewFile" },
@@ -163,8 +163,8 @@ require("lazy").setup({
   },
   {
     "github/copilot.vim",
+    cmd = "Copilot",
     config = function() require("config.copilot") end,
-    event = { "BufReadPre", "BufNewFile" },
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
@@ -200,7 +200,11 @@ require("lazy").setup({
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {
-      on_attach = require("helpers.lsp").on_attach,
+      on_attach = function(client, buf)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+        require("helpers.lsp").on_attach(client, buf)
+      end,
     },
     ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
   },

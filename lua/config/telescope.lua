@@ -5,7 +5,7 @@ local actions = require("telescope.actions")
 
 require("telescope").setup {
   defaults = {
-    layout_strategy = "flex",
+    layout_strategy = "vertical",
     find_command = {
       "rg",
       "--files",
