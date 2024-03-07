@@ -20,7 +20,6 @@ require("lazy").setup({
     priority = 1000,
     config = function()
       require("catppuccin").setup {
-        flavour = "mocha",
         integrations = {
           cmp = true,
           gitsigns = true,
@@ -28,7 +27,7 @@ require("lazy").setup({
           which_key = true,
         },
       }
-      vim.cmd.colorscheme("default")
+      vim.cmd.colorscheme("catppuccin")
     end,
   },
   {
