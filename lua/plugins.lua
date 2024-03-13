@@ -166,9 +166,12 @@ require("lazy").setup({
     config = function() require("config.copilot") end,
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     config = function() require("config.null_ls") end,
     event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "davidmh/cspell.nvim",
+    },
   },
   {
     "FabijanZulj/blame.nvim",
