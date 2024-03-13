@@ -8,7 +8,22 @@
 --  define the property 'filetypes' to the map in question.
 local servers = {
   hls = {},
-  rust_analyzer = {},
+  rust_analyzer = {
+    ["rust-analyzer"] = {
+      checkOnSave = {
+        allFeatures = true,
+        command = "clippy",
+        extraArgs = {
+          "--",
+          "--no-deps",
+          "-Dclippy::correctness",
+          "-Dclippy::complexity",
+          "-Wclippy::perf",
+          "-Wclippy::pedantic",
+        },
+      },
+    },
+  },
   sqlls = {},
   gopls = {},
   -- eslint = {
