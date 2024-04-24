@@ -27,8 +27,13 @@ require("lazy").setup({
           which_key = true,
         },
       }
-      vim.cmd.colorscheme("catppuccin")
+      --    vim.cmd.colorscheme("catppuccin")
     end,
+  },
+  {
+    "mcauley-penney/ice-cave.nvim",
+    config = function() vim.cmd.colorscheme("ice-cave") end,
+    priority = 1000,
   },
   {
     "windwp/nvim-autopairs",
@@ -202,6 +207,14 @@ require("lazy").setup({
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {
+      settings = {
+        tsserver_file_preferences = {
+          includeInlayParameterNameHints = "all",
+          includeInlayFunctionParameterTypeHints = true,
+          includeInlayVariableTypeHints = true,
+          includeInlayFunctionLikeReturnTypeHints = true,
+        },
+      },
       on_attach = function(client, buf)
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
