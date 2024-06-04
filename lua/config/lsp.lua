@@ -26,11 +26,11 @@ local servers = {
   },
   sqlls = {},
   gopls = {},
-  -- eslint = {
-  --   settings = {
-  --     format = false,
-  --   },
-  -- },
+  eslint = {
+    settings = {
+      format = false,
+    },
+  },
   lua_ls = {
     Lua = {
       format = { enable = false },

@@ -4,4 +4,4 @@ require("blame").setup {
   merge_consecutive = false,
 }
 
-vim.api.nvim_set_keymap("n", "<leader>gb", "<CMD>ToggleBlame virtual<CR>", { noremap = true, silent = true, desc = "BlameToggle" })
+vim.api.nvim_set_keymap("n", "<leader>gb", "<CMD>BlameToggle virtual<CR>", { noremap = true, silent = true, desc = "BlameToggle" })
