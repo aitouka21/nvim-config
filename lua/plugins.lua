@@ -276,4 +276,8 @@ require("lazy").setup({
     end,
   },
   require("kickstart.plugins.autoformat"),
+  {
+    "numToStr/Comment.nvim",
+    opts = {},
+  },
 }, {})
