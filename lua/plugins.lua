@@ -280,4 +280,11 @@ require("lazy").setup({
     "numToStr/Comment.nvim",
     opts = {},
   },
+  {
+    "voldikss/vim-floaterm",
+    config = function()
+      --
+      vim.keymap.set({ "n", "t" }, "<C-/>", "<CMD>FloatermToggle<CR>", { desc = "Floaterm Toggle" })
+    end,
+  },
 }, {})
