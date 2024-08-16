@@ -22,3 +22,4 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.autoindent = true
 vim.opt.smartindent = true
+vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
