@@ -1,14 +1,3 @@
-vim.g.haskell_tools = {
-  hls = {
-    on_attach = require("helpers.lsp").on_attach,
-    settings = {
-      haskell = {
-        formattingProvider = "stylish-haskell",
-      },
-    },
-  },
-}
-
 local ht = require("haskell-tools")
 
 local bufnr = vim.api.nvim_get_current_buf()

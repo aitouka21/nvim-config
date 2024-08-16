@@ -37,6 +37,11 @@ return {
       callback = function(args)
         local client_id = args.data.client_id
         local client = vim.lsp.get_client_by_id(client_id)
+        if not client then
+          print("Unable to get client")
+          return
+        end
+
         local bufnr = args.buf
 
         -- Only attach to clients that support document formatting
@@ -46,6 +51,7 @@ return {
         -- You can remove this line if you know what you're doing :)
         if client.name == "tsserver" then return end
         if client.name == "typescript-tools" then return end
+        -- if client.name == "haskell-tools.nvim" then return end
 
         -- Create an autocmd that will run *before* we save the buffer.
         --  Run the formatting command for the LSP that has just attached.
@@ -54,7 +60,6 @@ return {
           buffer = bufnr,
           callback = function()
             if not format_is_enabled then return end
-
             vim.lsp.buf.format {
               async = false,
               filter = function(c) return c.id == client.id end,

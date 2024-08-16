@@ -262,8 +262,8 @@ require("lazy").setup({
   },
   {
     "mrcjkb/haskell-tools.nvim",
-    version = "^3", -- Recommended
-    ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
+    version = "^4", -- Recommended,
+    lazy = false,
   },
   {
     "rmagatti/auto-session",
@@ -281,10 +281,7 @@ require("lazy").setup({
     opts = {},
   },
   {
-    "voldikss/vim-floaterm",
-    config = function()
-      --
-      vim.keymap.set({ "n", "t" }, "<C-/>", "<CMD>FloatermToggle<CR>", { desc = "Floaterm Toggle" })
-    end,
+    "rescript-lang/vim-rescript",
+    ft = "rescript",
   },
 }, {})
