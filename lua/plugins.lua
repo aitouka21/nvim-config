@@ -31,13 +31,6 @@ require("lazy").setup({
     end,
   },
   {
-    "mcauley-penney/ice-cave.nvim",
-    config = function()
-      -- vim.cmd.colorscheme("ice-cave")
-    end,
-    priority = 1000,
-  },
-  {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     opts = {},
@@ -198,11 +191,6 @@ require("lazy").setup({
     config = function() require("config.hop") end,
   },
   {
-    "github/copilot.vim",
-    cmd = "Copilot",
-    config = function() require("config.copilot") end,
-  },
-  {
     "nvimtools/none-ls.nvim",
     config = function() require("config.null_ls") end,
     event = { "BufReadPre", "BufNewFile" },
@@ -218,10 +206,6 @@ require("lazy").setup({
   {
     "stevearc/oil.nvim",
     config = function() require("config.oil") end,
-  },
-  {
-    "folke/zen-mode.nvim",
-    cmd = "ZenMode",
   },
   {
     "ThePrimeagen/harpoon",
