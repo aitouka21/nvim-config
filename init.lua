@@ -2,6 +2,23 @@ require("isuck.set")
 require("isuck.mappings")
 require("plugins")
 
+local transparent_highlights = {
+  "Normal",
+  "NormalNC",
+  "LineNr",
+  "Folded",
+  "NonText",
+  "SpecialKey",
+  "VertSplit",
+  "SignColumn",
+  "EndOfBuffer",
+  "TablineFill", -- this might be preference
+}
+
+for _, hl in ipairs(transparent_highlights) do
+  vim.cmd.highlight(hl .. " guibg=NONE ctermbg=NONE")
+end
+
 vim.g.haskell_tools = {
   tools = {
     log = {
