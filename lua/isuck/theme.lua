@@ -27,8 +27,7 @@ local function set_theme_same_as_alacritty()
   end
 end
 
-local term = os.getenv("TERM")
-if term == "alacritty" then
+if true then
   set_theme_same_as_alacritty()
 else
   set_default_theme()

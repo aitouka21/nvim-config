@@ -208,12 +208,6 @@ require("lazy").setup({
     config = function() require("config.oil") end,
   },
   {
-    "ThePrimeagen/harpoon",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function() require("config.harpoon") end,
-    event = "VeryLazy",
-  },
-  {
     "norcalli/nvim-colorizer.lua",
     name = "colorizer",
     config = function() require("colorizer").setup() end,
