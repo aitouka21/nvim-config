@@ -92,7 +92,7 @@ require("lazy").setup({
       { "williamboman/mason.nvim", config = true },
       "williamboman/mason-lspconfig.nvim",
       -- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+      -- NOTE: `opts = {}` is the same as calling `require(1fidget').setup({})`
       {
         "j-hui/fidget.nvim",
         tag = "legacy",
@@ -261,5 +261,16 @@ require("lazy").setup({
   {
     "rescript-lang/vim-rescript",
     ft = "rescript",
+  },
+  {
+    "otavioschwanck/arrow.nvim",
+    dependencies = {
+      { "nvim-tree/nvim-web-devicons" },
+    },
+    opts = {
+      show_icons = true,
+      leader_key = ",", -- Recommended to be a single key
+      buffer_leader_key = "m", -- Per Buffer Mappings
+    },
   },
 }, {})
