@@ -24,7 +24,6 @@ require("lazy").setup({
         integrations = {
           cmp = true,
           gitsigns = true,
-          harpoon = true,
           which_key = true,
         },
       }
